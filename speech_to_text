@@ -1,0 +1,8 @@
+import whisper
+
+model = whisper.load_model("base")
+
+def transcribe(filepath: str, model: whisper):
+    return model.transcribe(filepath)["text"]
+
+print(transcribe("mel/data/test.mp3", model))
